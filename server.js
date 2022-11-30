@@ -10,5 +10,8 @@ app.get('/', function(req, res){
 });
 
 app.get('/next', function(req, res){
-    res.send('next 페이지 입니다..')
+    res.sendFile(__dirname + '/detail.html')
 });
+
+app.use(express.static('asset'))
+app.use('/style', express.static(__dirname + '/style'))
